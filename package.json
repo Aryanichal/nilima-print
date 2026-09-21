@@ -1,0 +1,30 @@
+{
+  "name": "nilima-print",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Internal tools for Nilima Print employees.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aryanichal/nilima-print.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Aryanichal/nilima-print/issues"
+  },
+  "homepage": "https://github.com/Aryanichal/nilima-print#readme",
+  "scripts": {
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "9.1.7",
+    "lint-staged": "17.5.1"
+  },
+  "lint-staged": {
+    "web/**/*.{ts,tsx,js,jsx,json,css,md}": [
+      "web/node_modules/.bin/prettier --write"
+    ],
+    "pdf-service/**/*.py": [
+      "pdf-service/.venv/bin/ruff check --fix",
+      "pdf-service/.venv/bin/ruff format"
+    ]
+  }
+}
